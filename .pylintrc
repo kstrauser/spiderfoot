@@ -135,7 +135,46 @@ disable=print-statement,
         exception-escape,
         comprehension-escape,
         bad-continuation, # Black and pylint disagree about this
-        line-too-long # Black would have fixed that if it could have
+        line-too-long, # Black would have fixed that if it could have
+        invalid-name, # From here on town, there are lots of things we'll want
+        missing-function-docstring, # to fix eventually. We'll address them
+        too-few-public-methods, # one at a time.
+        missing-class-docstring,
+        too-many-instance-attributes,
+        too-many-arguments,
+        no-self-use,
+        singleton-comparison,
+        too-many-nested-blocks,
+        too-many-branches,
+        unidiomatic-typecheck,
+        pointless-string-statement,
+        unused-variable,
+        inconsistent-return-statements,
+        unused-argument,
+        protected-access,
+        dangerous-default-value,
+        redefined-builtin,
+        too-many-return-statements,
+        useless-object-inheritance,
+        attribute-defined-outside-init,
+        no-member,
+        global-statement,
+        too-many-statements,
+        too-many-public-methods,
+        unsubscriptable-object,
+        unsupported-membership-test,
+        too-many-locals,
+        arguments-differ,
+        no-else-return,
+        missing-module-docstring,
+        unused-import,
+        broad-except,
+        redefined-outer-name,
+        trailing-whitespace,
+        no-else-continue,
+        unnecessary-pass,
+        no-else-break
+
 
 # Enable the message, report, category or checker with the given id(s). You can
 # either give multiple identifier separated by comma (,) or put this option
