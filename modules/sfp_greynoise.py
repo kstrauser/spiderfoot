@@ -11,10 +11,12 @@
 # -------------------------------------------------------------------------------
 
 import json
-from datetime import datetime
 import time
+from datetime import datetime
+
 from netaddr import IPNetwork
-from sflib import SpiderFoot, SpiderFootPlugin, SpiderFootEvent
+
+from sflib import SpiderFoot, SpiderFootEvent, SpiderFootPlugin
 
 
 class sfp_greynoise(SpiderFootPlugin):

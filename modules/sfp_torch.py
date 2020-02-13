@@ -11,8 +11,9 @@
 # Licence:     GPL
 # -------------------------------------------------------------------------------
 
-from sflib import SpiderFoot, SpiderFootPlugin, SpiderFootEvent
 import re
+
+from sflib import SpiderFoot, SpiderFootEvent, SpiderFootPlugin
 
 
 class sfp_torch(SpiderFootPlugin):

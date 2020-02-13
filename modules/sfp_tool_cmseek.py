@@ -11,11 +11,12 @@
 # Licence:     GPL
 # -------------------------------------------------------------------------------
 
-from subprocess import Popen, PIPE
 import io
 import json
 import os.path
-from sflib import SpiderFoot, SpiderFootPlugin, SpiderFootEvent
+from subprocess import PIPE, Popen
+
+from sflib import SpiderFoot, SpiderFootEvent, SpiderFootPlugin
 
 
 class sfp_tool_cmseek(SpiderFootPlugin):

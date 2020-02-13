@@ -14,7 +14,7 @@
 
 import re
 
-from sflib import SpiderFoot, SpiderFootPlugin, SpiderFootEvent
+from sflib import SpiderFoot, SpiderFootEvent, SpiderFootPlugin
 
 # Indentify pages that use Javascript libs, handle passwords, have forms,
 # permit file uploads and more to come.

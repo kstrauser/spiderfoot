@@ -10,8 +10,9 @@
 # Licence:     GPL
 # -------------------------------------------------------------------------------
 
-from sflib import SpiderFoot, SpiderFootPlugin
 import json
+
+from sflib import SpiderFoot, SpiderFootPlugin
 
 
 class sfp__stor_stdout(SpiderFootPlugin):

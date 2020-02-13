@@ -9,10 +9,10 @@
 # Licence:     GPL
 # -------------------------------------------------------------------------------
 
+import json
 import re
 
-import json
-from sflib import SpiderFoot, SpiderFootPlugin, SpiderFootEvent
+from sflib import SpiderFoot, SpiderFootEvent, SpiderFootPlugin
 
 
 class sfp_psbdmp(SpiderFootPlugin):

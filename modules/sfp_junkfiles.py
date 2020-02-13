@@ -10,8 +10,9 @@
 # Licence:     GPL
 # -------------------------------------------------------------------------------
 
-from sflib import SpiderFoot, SpiderFootPlugin, SpiderFootEvent
 import random
+
+from sflib import SpiderFoot, SpiderFootEvent, SpiderFootPlugin
 
 
 class sfp_junkfiles(SpiderFootPlugin):

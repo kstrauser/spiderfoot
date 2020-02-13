@@ -10,10 +10,10 @@
 # -------------------------------------------------------------------------------
 
 import json
-import time
 import re
+import time
 
-from sflib import SpiderFoot, SpiderFootPlugin, SpiderFootEvent
+from sflib import SpiderFoot, SpiderFootEvent, SpiderFootPlugin
 
 
 class sfp_builtwith(SpiderFootPlugin):

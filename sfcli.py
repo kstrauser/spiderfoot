@@ -11,18 +11,20 @@
 # Licence:     GPL
 # -------------------------------------------------------------------------------
 
-import sys
+import argparse
+import cmd
+import codecs
+import json
 import os
 import re
-import json
-import requests
-import shlex
-import codecs
-import time
 import readline
-import cmd
-import argparse
+import shlex
+import sys
+import time
 from os.path import expanduser
+
+import requests
+
 
 # Colors to make things purty
 class bcolors:

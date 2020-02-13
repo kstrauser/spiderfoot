@@ -1,6 +1,7 @@
 # test_sflib.py
-import sflib
 import unittest
+
+import sflib
 
 
 class TestPublicSuffixList(unittest.TestCase):

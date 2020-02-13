@@ -10,10 +10,10 @@
 # Licence:     GPL
 # -------------------------------------------------------------------------------
 
+import json
 import re
 
-import json
-from sflib import SpiderFoot, SpiderFootPlugin, SpiderFootEvent
+from sflib import SpiderFoot, SpiderFootEvent, SpiderFootPlugin
 
 malchecks = {
     "AbuseIPDB Single IP": {

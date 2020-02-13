@@ -10,12 +10,12 @@
 # Licence:     GPL
 # -------------------------------------------------------------------------------
 
-import json
 import base64
+import json
 import re
-
 import time
-from sflib import SpiderFoot, SpiderFootPlugin, SpiderFootEvent
+
+from sflib import SpiderFoot, SpiderFootEvent, SpiderFootPlugin
 
 
 class sfp_circllu(SpiderFootPlugin):

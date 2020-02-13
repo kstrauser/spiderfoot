@@ -11,20 +11,22 @@
 # Licence:     GPL
 # -------------------------------------------------------------------------------
 
-import sys
+import argparse
 import os
 import os.path
-import signal
-import time
-import argparse
-from copy import deepcopy
-import cherrypy
 import random
+import signal
+import sys
+import time
+from copy import deepcopy
+
+import cherrypy
 from cherrypy.lib import auth_digest
-from sflib import SpiderFoot
+
 from sfdb import SpiderFootDb
-from sfwebui import SpiderFootWebUi
+from sflib import SpiderFoot
 from sfscan import SpiderFootScanner
+from sfwebui import SpiderFootWebUi
 
 # 'Global' configuration options
 # These can be overriden on a per-module basis, and some will

@@ -10,10 +10,11 @@
 # Licence:     GPL
 # -------------------------------------------------------------------------------
 
-from netaddr import IPAddress, IPNetwork
 import re
 
-from sflib import SpiderFoot, SpiderFootPlugin, SpiderFootEvent
+from netaddr import IPAddress, IPNetwork
+
+from sflib import SpiderFoot, SpiderFootEvent, SpiderFootPlugin
 
 malchecks = {
     "ThreatExpert.com Database": {

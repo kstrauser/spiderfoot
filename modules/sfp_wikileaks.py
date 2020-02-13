@@ -11,7 +11,8 @@
 # -------------------------------------------------------------------------------
 
 import datetime
-from sflib import SpiderFoot, SpiderFootPlugin, SpiderFootEvent
+
+from sflib import SpiderFoot, SpiderFootEvent, SpiderFootPlugin
 
 
 class sfp_wikileaks(SpiderFootPlugin):

@@ -1,6 +1,7 @@
 # test_spiderfootevent.py
-from sflib import SpiderFootEvent
 import unittest
+
+from sflib import SpiderFootEvent
 
 
 class TestSpiderFootEvent(unittest.TestCase):

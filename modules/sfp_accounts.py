@@ -11,11 +11,12 @@
 # Licence:     GPL
 # -------------------------------------------------------------------------------
 
-import time
-import threading
 import json
 import random
-from sflib import SpiderFoot, SpiderFootPlugin, SpiderFootEvent
+import threading
+import time
+
+from sflib import SpiderFoot, SpiderFootEvent, SpiderFootPlugin
 
 
 class sfp_accounts(SpiderFootPlugin):

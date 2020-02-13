@@ -11,10 +11,11 @@
 # Licence:     GPL
 # -------------------------------------------------------------------------------
 
-import re
 import codecs
+import re
 from hashlib import sha256
-from sflib import SpiderFoot, SpiderFootPlugin, SpiderFootEvent
+
+from sflib import SpiderFoot, SpiderFootEvent, SpiderFootPlugin
 
 
 class sfp_bitcoin(SpiderFootPlugin):

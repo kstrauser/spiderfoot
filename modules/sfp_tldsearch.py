@@ -14,8 +14,10 @@
 import random
 import threading
 import time
+
 import dns.resolver
-from sflib import SpiderFoot, SpiderFootPlugin, SpiderFootEvent
+
+from sflib import SpiderFoot, SpiderFootEvent, SpiderFootPlugin
 
 
 class sfp_tldsearch(SpiderFootPlugin):

@@ -11,9 +11,10 @@
 # -------------------------------------------------------------------------------
 
 import re
+
 from netaddr import IPAddress, IPNetwork
 
-from sflib import SpiderFoot, SpiderFootPlugin, SpiderFootEvent
+from sflib import SpiderFoot, SpiderFootEvent, SpiderFootPlugin
 
 malchecks = {
     "Nothink.org SSH Scanners": {

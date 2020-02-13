@@ -13,10 +13,11 @@
 
 import re
 
-import dns.resolver
 import dns.query
 import dns.rdatatype
-from sflib import SpiderFoot, SpiderFootPlugin, SpiderFootEvent
+import dns.resolver
+
+from sflib import SpiderFoot, SpiderFootEvent, SpiderFootPlugin
 
 
 class sfp_dnsraw(SpiderFootPlugin):

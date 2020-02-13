@@ -1,4 +1,5 @@
 fmt:
+	isort --line-width=99 --apply
 	black .
 
 run:

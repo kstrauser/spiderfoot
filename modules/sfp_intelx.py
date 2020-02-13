@@ -11,10 +11,11 @@
 # Licence:     GPL
 # -------------------------------------------------------------------------------
 
+import datetime
 import json
 import time
-import datetime
-from sflib import SpiderFoot, SpiderFootPlugin, SpiderFootEvent
+
+from sflib import SpiderFoot, SpiderFootEvent, SpiderFootPlugin
 
 
 class sfp_intelx(SpiderFootPlugin):

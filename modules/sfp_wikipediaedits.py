@@ -13,7 +13,8 @@
 import datetime
 import re
 from html.parser import HTMLParser
-from sflib import SpiderFoot, SpiderFootPlugin, SpiderFootEvent
+
+from sflib import SpiderFoot, SpiderFootEvent, SpiderFootPlugin
 
 
 class sfp_wikipediaedits(SpiderFootPlugin):

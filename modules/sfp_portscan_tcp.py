@@ -11,11 +11,13 @@
 # Licence:     GPL
 # -------------------------------------------------------------------------------
 
-from netaddr import IPNetwork
 import random
 import threading
 import time
-from sflib import SpiderFoot, SpiderFootPlugin, SpiderFootEvent
+
+from netaddr import IPNetwork
+
+from sflib import SpiderFoot, SpiderFootEvent, SpiderFootPlugin
 
 
 class sfp_portscan_tcp(SpiderFootPlugin):

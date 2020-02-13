@@ -12,7 +12,8 @@
 # -------------------------------------------------------------------------------
 
 import json
-from sflib import SpiderFoot, SpiderFootPlugin, SpiderFootEvent
+
+from sflib import SpiderFoot, SpiderFootEvent, SpiderFootPlugin
 
 # Standard headers, taken from http://en.wikipedia.org/wiki/List_of_HTTP_header_fields
 headers = [

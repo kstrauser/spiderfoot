@@ -12,7 +12,8 @@
 # -------------------------------------------------------------------------------
 
 import adblockparser
-from sflib import SpiderFoot, SpiderFootPlugin, SpiderFootEvent
+
+from sflib import SpiderFoot, SpiderFootEvent, SpiderFootPlugin
 
 
 class sfp_adblock(SpiderFootPlugin):

@@ -1,6 +1,7 @@
 # test_spiderfootscanstatus.py
-from sflib import SpiderFootScanStatus
 import unittest
+
+from sflib import SpiderFootScanStatus
 
 
 class TestSpiderFootScanStatus(unittest.TestCase):

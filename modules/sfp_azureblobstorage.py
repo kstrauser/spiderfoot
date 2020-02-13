@@ -13,7 +13,8 @@
 
 import threading
 import time
-from sflib import SpiderFoot, SpiderFootPlugin, SpiderFootEvent
+
+from sflib import SpiderFoot, SpiderFootEvent, SpiderFootPlugin
 
 
 class sfp_azureblobstorage(SpiderFootPlugin):

@@ -9,22 +9,24 @@
 # Copyright:    (c) Steve Micallef 2012
 # License:      GPL
 # -----------------------------------------------------------------
-import json
-import cherrypy
-import html
 import csv
-import time
+import html
+import json
 import random
-from secure import SecureHeaders
-from cherrypy import _cperror
-from operator import itemgetter
+import time
 from copy import deepcopy
+from io import StringIO
+from operator import itemgetter
+
+import cherrypy
+from cherrypy import _cperror
 from mako.lookup import TemplateLookup
 from mako.template import Template
+from secure import SecureHeaders
+
 from sfdb import SpiderFootDb
 from sflib import SpiderFoot, globalScanStatus
 from sfscan import SpiderFootScanner
-from io import StringIO
 
 
 class SpiderFootWebUi:

@@ -11,9 +11,13 @@
 # -------------------------------------------------------------------------------
 
 import json
-import urllib.request, urllib.parse, urllib.error
+import urllib.error
+import urllib.parse
+import urllib.request
+
 from netaddr import IPNetwork
-from sflib import SpiderFoot, SpiderFootPlugin, SpiderFootEvent
+
+from sflib import SpiderFoot, SpiderFootEvent, SpiderFootPlugin
 
 
 class sfp_shodan(SpiderFootPlugin):

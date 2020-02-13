@@ -11,8 +11,11 @@
 # -------------------------------------------------------------------------------
 
 import json
-import urllib.request, urllib.parse, urllib.error
-from sflib import SpiderFoot, SpiderFootPlugin, SpiderFootEvent
+import urllib.error
+import urllib.parse
+import urllib.request
+
+from sflib import SpiderFoot, SpiderFootEvent, SpiderFootPlugin
 
 
 class sfp_citadel(SpiderFootPlugin):

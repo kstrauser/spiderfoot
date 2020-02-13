@@ -10,10 +10,12 @@
 # Licence:     GPL
 # -------------------------------------------------------------------------------
 
-import sqlite3
 import re
+import sqlite3
 import time
+
 from sflib import SpiderFoot
+
 
 # SQLite doesn't support regex queries, so we create
 # a custom function to do so..

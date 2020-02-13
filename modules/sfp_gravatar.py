@@ -11,10 +11,11 @@
 # Licence:     GPL
 # -------------------------------------------------------------------------------
 
-import json
 import hashlib
+import json
 import time
-from sflib import SpiderFoot, SpiderFootPlugin, SpiderFootEvent
+
+from sflib import SpiderFoot, SpiderFootEvent, SpiderFootPlugin
 
 
 class sfp_gravatar(SpiderFootPlugin):

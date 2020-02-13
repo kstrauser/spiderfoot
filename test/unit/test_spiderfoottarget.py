@@ -1,6 +1,7 @@
 # test_spiderfoottarget.py
-from sflib import SpiderFootTarget
 import unittest
+
+from sflib import SpiderFootTarget
 
 
 class TestSpiderFootTarget(unittest.TestCase):

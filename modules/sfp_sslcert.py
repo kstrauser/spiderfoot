@@ -12,7 +12,8 @@
 
 import time
 from urllib.parse import urlparse
-from sflib import SpiderFoot, SpiderFootPlugin, SpiderFootEvent
+
+from sflib import SpiderFoot, SpiderFootEvent, SpiderFootPlugin
 
 
 class sfp_sslcert(SpiderFootPlugin):

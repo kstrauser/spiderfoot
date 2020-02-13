@@ -9,16 +9,19 @@
 # Copyright:    (c) Steve Micallef 2013
 # License:      GPL
 # -----------------------------------------------------------------
-import traceback
-import time
-import sys
-import socket
-import dns.resolver
-import threading
 import random
+import socket
+import sys
+import threading
+import time
+import traceback
 from copy import deepcopy
+
+import dns.resolver
+
 from sfdb import SpiderFootDb
-from sflib import SpiderFoot, SpiderFootEvent, SpiderFootTarget, SpiderFootPlugin, globalScanStatus
+from sflib import SpiderFoot, SpiderFootEvent, SpiderFootPlugin, SpiderFootTarget, globalScanStatus
+
 
 # Eventually change this to be able to control multiple scan instances
 class SpiderFootScanner(threading.Thread):
