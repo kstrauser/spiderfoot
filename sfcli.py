@@ -154,7 +154,7 @@ class SpiderFootCli(cmd.Cmd):
 
     def do_history(self, line):
         """history [-l]
-        Short-cut command for set cli.history = 1/0. 
+        Short-cut command for set cli.history = 1/0.
         Add -l to just list the history."""
         c = self.myparseline(line)
 
@@ -563,7 +563,7 @@ class SpiderFootCli(cmd.Cmd):
     # Get scan info and config.
     def do_scaninfo(self, line):
         """scaninfo <sid> [-c]
-        Get status information for scan ID <sid>, optionally also its 
+        Get status information for scan ID <sid>, optionally also its
         configuration if -c is supplied."""
         c = self.myparseline(line)
         if len(c[0]) < 1:
@@ -625,8 +625,8 @@ class SpiderFootCli(cmd.Cmd):
     # Show the data from a scan.
     def do_data(self, line):
         """data <sid> [-t type] [-x] [-u]
-        Get the scan data for scan ID <sid> and optionally the element 
-        type [type] (e.g. EMAILADDR), [type]. Use -x for extended format. 
+        Get the scan data for scan ID <sid> and optionally the element
+        type [type] (e.g. EMAILADDR), [type]. Use -x for extended format.
         Use -u for a unique set of results."""
         c = self.myparseline(line)
         if len(c[0]) < 1:
@@ -714,9 +714,9 @@ class SpiderFootCli(cmd.Cmd):
     # Show logs.
     def do_logs(self, line):
         """logs <sid> [-l count] [-w]
-        Show the most recent [count] logs for a given scan ID, <sid>. 
+        Show the most recent [count] logs for a given scan ID, <sid>.
         If no count is supplied, all logs are given.
-        If -w is supplied, logs will be streamed to the console until 
+        If -w is supplied, logs will be streamed to the console until
         Ctrl-C is entered."""
         c = self.myparseline(line)
         if len(c[0]) < 1:
@@ -795,13 +795,13 @@ class SpiderFootCli(cmd.Cmd):
     # Start a new scan.
     def do_start(self, line):
         """start <target> (-m m1,... | -t t1,... | -u case) [-n name] [-w]
-        Start a scan against <target> using modules m1,... OR looking 
+        Start a scan against <target> using modules m1,... OR looking
         for types t1,...
         OR by use case ("all", "investigate", "passive" and "footprint").
 
-        Scan be be optionally named [name], without a name the target 
+        Scan be be optionally named [name], without a name the target
         will be used.
-        Use -w to watch the logs from the scan. Ctrl-C to abort the 
+        Use -w to watch the logs from the scan. Ctrl-C to abort the
         logging (but will not abort the scan).
         """
         mods = ""
@@ -887,7 +887,7 @@ class SpiderFootCli(cmd.Cmd):
     # Search for data
     def do_find(self, line):
         """find "<string|/regex/>" <[-s sid]|[-t type]> [-x]
-        Search for string/regex, limited to the scope of either a scan ID or 
+        Search for string/regex, limited to the scope of either a scan ID or
         event type. -x for extended format."""
         c = self.myparseline(line)
         if len(c[0]) < 1:
@@ -926,7 +926,7 @@ class SpiderFootCli(cmd.Cmd):
     # Summary of a scan
     def do_summary(self, line):
         """summary <sid> [-t]
-        Summarise the results for a scan ID, <sid>. -t to only show 
+        Summarise the results for a scan ID, <sid>. -t to only show
         the element types."""
         c = self.myparseline(line)
         if len(c[0]) < 1:
@@ -1272,14 +1272,14 @@ if __name__ == "__main__":
     if not args.q:
         s = SpiderFootCli()
         s.dprint(
-            "\n\
-  _________      .__    .___          ___________            __  \n\
- /   _____/_____ |__| __| _/__________\\_   _____/___   _____/  |_ \n\
- \_____  \\\\____ \|  |/ __ |/ __ \\_  __ \\    __)/  _ \ /  _ \\   __\\\n\
- /        \\  |_> >  / /_/ \\  ___/|  | \\/     \\(  <_> |  <_> )  |  \n\
-/_______  /   __/|__\\____ |\\___  >__|  \\___  / \\____/ \\____/|__|  \n\
-        \\/|__|           \\/    \\/          \\/                     \n\
-                Open Source Intelligence Automation.",
+            r"""
+  _________      .__    .___          ___________            __
+ /   _____/_____ |__| __| _/__________\_   _____/___   _____/  |_
+ \_____  \\____ \|  |/ __ |/ __ \_  __ \    __)/  _ \ /  _ \   __\
+ /        \  |_> >  / /_/ \  ___/|  | \/     \(  <_> |  <_> )  |
+/_______  /   __/|__\____ |\___  >__|  \___  / \____/ \____/|__|
+        \/|__|           \/    \/          \/
+                Open Source Intelligence Automation.""",
             plain=True,
             color=bcolors.GREYBLUE,
         )

@@ -24,9 +24,7 @@ class sfp_dnsraw(SpiderFootPlugin):
     """DNS Raw Records:Footprint,Investigate,Passive:DNS::Retrieves raw DNS records such as MX, TXT and others."""
 
     # Default options
-    opts = {
-        "verify": True,
-    }
+    opts = {"verify": True}
 
     # Option descriptions
     optdescs = {"verify": "Verify SPF hostnames resolve."}
@@ -84,9 +82,9 @@ class sfp_dnsraw(SpiderFootPlugin):
         # Process the raw data alone
         recdata = dict()
         recs = {
-            "MX": ["\S+\s+(?:\d+)?\s+IN\s+MX\s+\d+\s+(\S+)\.", "PROVIDER_MAIL"],
-            "NS": ["\S+\s+(?:\d+)?\s+IN\s+NS\s+(\S+)\.", "PROVIDER_DNS"],
-            "TXT": ['\S+\s+TXT\s+"(.[^"]*)"', "DNS_TEXT"],
+            "MX": [r"\S+\s+(?:\d+)?\s+IN\s+MX\s+\d+\s+(\S+)\.", "PROVIDER_MAIL"],
+            "NS": [r"\S+\s+(?:\d+)?\s+IN\s+NS\s+(\S+)\.", "PROVIDER_DNS"],
+            "TXT": [r'\S+\s+TXT\s+"(.[^"]*)"', "DNS_TEXT"],
         }
 
         for rec in list(recs.keys()):

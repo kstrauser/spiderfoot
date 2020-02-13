@@ -80,9 +80,9 @@ class sfp_myspace(SpiderFootPlugin):
             # Check for email address as name, at the risk of missed results.
             try:
                 matches = re.findall(
-                    '<a href="\/([a-zA-Z0-9_]+)".*[\&; :"\#\*\("\'\;\,\>\.\?\!]+'
+                    r'<a href="\/([a-zA-Z0-9_]+)".*[\&; :"\#\*\("\'\;\,\>\.\?\!]+'
                     + email
-                    + '[\&; :"\#\*\)"\'\;\,\<\.\?\!]+',
+                    + r'[\&; :"\#\*\)"\'\;\,\<\.\?\!]+',
                     profile,
                     re.IGNORECASE,
                 )

@@ -16,18 +16,18 @@ from sflib import SpiderFoot, SpiderFootEvent, SpiderFootPlugin
 
 regexps = dict(
     {
-        "LinkedIn (Individual)": list([".*linkedin.com/in/([a-zA-Z0-9_]+$)"]),
-        "LinkedIn (Company)": list([".*linkedin.com/company/([a-zA-Z0-9_]+$)"]),
-        "Github": list([".*github.com/([a-zA-Z0-9_]+)\/"]),
-        "Google+": list([".*plus.google.com/([0-9]+$)"]),
-        "Facebook": list([".*facebook.com/([a-zA-Z0-9_]+$)"]),
-        "MySpace": list(["https?://myspace.com/([a-zA-Z0-9_\.]+$)"]),
-        "YouTube": list([".*youtube.com/([a-zA-Z0-9_]+$)"]),
+        "LinkedIn (Individual)": list([r".*linkedin.com/in/([a-zA-Z0-9_]+$)"]),
+        "LinkedIn (Company)": list([r".*linkedin.com/company/([a-zA-Z0-9_]+$)"]),
+        "Github": list([r".*github.com/([a-zA-Z0-9_]+)\/"]),
+        "Google+": list([r".*plus.google.com/([0-9]+$)"]),
+        "Facebook": list([r".*facebook.com/([a-zA-Z0-9_]+$)"]),
+        "MySpace": list([r"https?://myspace.com/([a-zA-Z0-9_\.]+$)"]),
+        "YouTube": list([r".*youtube.com/([a-zA-Z0-9_]+$)"]),
         "Twitter": list(
-            [".*twitter.com/([a-zA-Z0-9_]{1,15}$)", ".*twitter.com/#!/([a-zA-Z0-9_]{1,15}$)"]
+            [r".*twitter.com/([a-zA-Z0-9_]{1,15}$)", r".*twitter.com/#!/([a-zA-Z0-9_]{1,15}$)"]
         ),
-        "SlideShare": list([".*slideshare.net/([a-zA-Z0-9_]+$)"]),
-        "Instagram": list([".*instagram.com/([a-zA-Z0-9_\.]+)/?$"]),
+        "SlideShare": list([r".*slideshare.net/([a-zA-Z0-9_]+$)"]),
+        "Instagram": list([r".*instagram.com/([a-zA-Z0-9_\.]+)/?$"]),
     }
 )
 

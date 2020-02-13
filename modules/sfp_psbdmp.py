@@ -117,7 +117,7 @@ class sfp_psbdmp(SpiderFootPlugin):
             # Sometimes pastes search results false positives
             if (
                 re.search(
-                    "[^a-zA-Z\-\_0-9]" + re.escape(eventData) + "[^a-zA-Z\-\_0-9]",
+                    r"[^a-zA-Z\-\_0-9]" + re.escape(eventData) + r"[^a-zA-Z\-\_0-9]",
                     res["content"],
                     re.IGNORECASE,
                 )

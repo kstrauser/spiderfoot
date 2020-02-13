@@ -156,7 +156,7 @@ class sfp_circllu(SpiderFootPlugin):
                             self.notifyListeners(ipe)
                         for crt in j[ip]["subjects"]:
                             r = re.findall(
-                                ".*[\"'](.+CN=([a-zA-Z0-9\-\*\.])+)[\"'].*",
+                                r".*[\"'](.+CN=([a-zA-Z0-9\-\*\.])+)[\"'].*",
                                 str(j[ip]["subjects"][crt]),
                                 re.IGNORECASE,
                             )

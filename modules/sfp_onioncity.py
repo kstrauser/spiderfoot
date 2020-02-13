@@ -105,9 +105,7 @@ class sfp_onioncity(SpiderFootPlugin):
         # Submit the Google results for analysis
         googlesearch_url = res["webSearchUrl"]
         response = self.sf.fetchUrl(
-            googlesearch_url,
-            timeout=self.opts["_fetchtimeout"],
-            useragent=self.opts["_useragent"],
+            googlesearch_url, timeout=self.opts["_fetchtimeout"], useragent=self.opts["_useragent"]
         )
         if response["code"] in ["200", "201", "202"]:
             evt = SpiderFootEvent("RAW_RIR_DATA", response["content"], self.__name__, event)
@@ -138,7 +136,7 @@ class sfp_onioncity(SpiderFootPlugin):
                 # Sometimes onion city search results false positives
                 if (
                     re.search(
-                        "[^a-zA-Z\-\_0-9]" + re.escape(eventData) + "[^a-zA-Z\-\_0-9]",
+                        r"[^a-zA-Z\-\_0-9]" + re.escape(eventData) + r"[^a-zA-Z\-\_0-9]",
                         res["content"],
                         re.IGNORECASE,
                     )

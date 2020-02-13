@@ -74,7 +74,7 @@ class sfp_pastebin(SpiderFootPlugin):
             target = self.domains[dom]
             res = self.sf.googleIterate(
                 searchString='+site:{target_site} "{search_keyword}"'.format(
-                    target_site=target, search_keyword=eventData,
+                    target_site=target, search_keyword=eventData
                 ),
                 opts={
                     "timeout": self.opts["_fetchtimeout"],
@@ -116,7 +116,7 @@ class sfp_pastebin(SpiderFootPlugin):
                 # Sometimes pastes search results false positives
                 if (
                     re.search(
-                        "[^a-zA-Z\-\_0-9]" + re.escape(eventData) + "[^a-zA-Z\-\_0-9]",
+                        r"[^a-zA-Z\-\_0-9]" + re.escape(eventData) + r"[^a-zA-Z\-\_0-9]",
                         res["content"],
                         re.IGNORECASE,
                     )

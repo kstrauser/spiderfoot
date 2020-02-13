@@ -41,7 +41,7 @@ class sfp_slideshare(SpiderFootPlugin):
 
     # Extract meta property contents from HTML
     def extractMeta(self, meta_property, html):
-        return re.findall(r'<meta property="' + meta_property + '"\s+content="(.+)" />', html)
+        return re.findall(r'<meta property="' + meta_property + r'"\s+content="(.+)" />', html)
 
     # Handle events sent to this module
     def handleEvent(self, event):

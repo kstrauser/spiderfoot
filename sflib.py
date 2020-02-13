@@ -592,16 +592,16 @@ class SpiderFoot:
         targetType = None
 
         regexToType = [
-            {"^\d+\.\d+\.\d+\.\d+$": "IP_ADDRESS"},
-            {"^\d+\.\d+\.\d+\.\d+/\d+$": "NETBLOCK_OWNER"},
-            {"^.*@.*$": "EMAILADDR"},
-            {"^\+\d+$": "PHONE_NUMBER"},
-            {'^".*\s+.*"$': "HUMAN_NAME"},
-            {'^".*"$': "USERNAME"},
-            {"^\d+$": "BGP_AS_OWNER"},
-            {"^[0-9a-f:]+$": "IPV6_ADDRESS"},
+            {r"^\d+\.\d+\.\d+\.\d+$": "IP_ADDRESS"},
+            {r"^\d+\.\d+\.\d+\.\d+/\d+$": "NETBLOCK_OWNER"},
+            {r"^.*@.*$": "EMAILADDR"},
+            {r"^\+\d+$": "PHONE_NUMBER"},
+            {r'^".*\s+.*"$': "HUMAN_NAME"},
+            {r'^".*"$': "USERNAME"},
+            {r"^\d+$": "BGP_AS_OWNER"},
+            {r"^[0-9a-f:]+$": "IPV6_ADDRESS"},
             {
-                "^(([a-z0-9]|[a-z0-9][a-z0-9\-]*[a-z0-9])\.)+([a-z0-9]|[a-z0-9][a-z0-9\-]*[a-z0-9])$": "INTERNET_NAME"
+                r"^(([a-z0-9]|[a-z0-9][a-z0-9\-]*[a-z0-9])\.)+([a-z0-9]|[a-z0-9][a-z0-9\-]*[a-z0-9])$": "INTERNET_NAME"
             },
         ]
 
@@ -725,9 +725,9 @@ class SpiderFoot:
     # checks.
     def urlBaseUrl(self, url):
         if "://" in url:
-            bits = re.match("(\w+://.[^/:\?]*)[:/\?].*", url)
+            bits = re.match(r"(\w+://.[^/:\?]*)[:/\?].*", url)
         else:
-            bits = re.match("(.[^/:\?]*)[:/\?]", url)
+            bits = re.match(r"(.[^/:\?]*)[:/\?]", url)
 
         if bits is None:
             return url.lower()
@@ -789,7 +789,7 @@ class SpiderFoot:
         if "." not in hostname:
             return False
 
-        if not re.match("^[a-z0-9-\.]*$", hostname, re.IGNORECASE):
+        if not re.match(r"^[a-z0-9-\.]*$", hostname, re.IGNORECASE):
             return False
 
         # Finally check if it's on a valid TLD
@@ -1103,7 +1103,7 @@ class SpiderFoot:
 
         for line in robotsTxtData.splitlines():
             if line.lower().startswith("disallow:"):
-                m = re.match("disallow:\s*(.[^ #]*)", line, re.IGNORECASE)
+                m = re.match(r"disallow:\s*(.[^ #]*)", line, re.IGNORECASE)
                 self.debug("robots.txt parsing found disallow: " + m.group(1))
                 returnArr.append(m.group(1))
                 continue
@@ -1355,19 +1355,16 @@ class SpiderFoot:
     def getSession(self):
         session = requests.session()
         if self.socksProxy:
-            session.proxies = {
-                "http": self.socksProxy,
-                "https": self.socksProxy,
-            }
+            session.proxies = {"http": self.socksProxy, "https": self.socksProxy}
         return session
 
     # Remove key= and others from URLs to avoid credentials in logs
     def removeUrlCreds(self, url):
         pats = {
-            "key=\S+": "key=XXX",
-            "pass=\S+": "pass=XXX",
-            "user=\S+": "user=XXX",
-            "password=\S+": "password=XXX",
+            r"key=\S+": "key=XXX",
+            r"pass=\S+": "pass=XXX",
+            r"user=\S+": "user=XXX",
+            r"password=\S+": "password=XXX",
         }
 
         ret = url
@@ -1679,13 +1676,10 @@ class SpiderFoot:
         endpoint = "https://www.googleapis.com/customsearch/v1?q={search_string}&".format(
             search_string=searchString.replace(" ", "%20")
         )
-        params = {
-            "cx": opts["cse_id"],
-            "key": opts["api_key"],
-        }
+        params = {"cx": opts["cse_id"], "key": opts["api_key"]}
 
         response = self.fetchUrl(
-            endpoint + urllib.parse.urlencode(params), timeout=opts["timeout"],
+            endpoint + urllib.parse.urlencode(params), timeout=opts["timeout"]
         )
 
         if response["code"] != "200":
@@ -1737,10 +1731,7 @@ class SpiderFoot:
             search_string=searchString.replace(" ", "%20")
         )
 
-        params = {
-            "responseFilter": "Webpages",
-            "count": opts["count"],
-        }
+        params = {"responseFilter": "Webpages", "count": opts["count"]}
 
         response = self.fetchUrl(
             endpoint + urllib.parse.urlencode(params),

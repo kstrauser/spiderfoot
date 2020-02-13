@@ -196,7 +196,7 @@ class sfp_dnsresolve(SpiderFootPlugin):
                     offset += len(name)
 
                 pat = re.compile(
-                    "[^a-z0-9\-\.\%]([a-z0-9\-\.\%]*\." + name + ")", re.DOTALL | re.MULTILINE
+                    r"[^a-z0-9\-\.\%]([a-z0-9\-\.\%]*\." + name + ")", re.DOTALL | re.MULTILINE
                 )
                 while offset >= 0:
                     offset = data.find(name, offset)

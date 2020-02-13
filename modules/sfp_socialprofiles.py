@@ -23,22 +23,22 @@ sites = {
     "Facebook": [
         '"{name}"+site:facebook.com',
         [
-            "[ '\"](https?://[a-z\.]*facebook.[a-z\.]+/[^/\"'<> ]+/?)['\" ]",
-            "(https?%3a%2f%2f[a-z\.]*facebook.[a-z\.]+%2f[^\/\"'<> ]+/?)",
+            r"[ '\"](https?://[a-z\.]*facebook.[a-z\.]+/[^/\"'<> ]+/?)['\" ]",
+            r"(https?%3a%2f%2f[a-z\.]*facebook.[a-z\.]+%2f[^\/\"'<> ]+/?)",
         ],
     ],
     "Google+": [
         '"{name}"+site:plus.google.com',
         [
-            "[ '\"](https?://plus.google.[a-z\.]+/\d+[^\"'<>\/ ]+)['\" ]",
-            "(https?%3a%2f%2fplus.google.[a-z\.]+%2f\d+[^\/\"'<> ]+)",
+            r"[ '\"](https?://plus.google.[a-z\.]+/\d+[^\"'<>\/ ]+)['\" ]",
+            r"(https?%3a%2f%2fplus.google.[a-z\.]+%2f\d+[^\/\"'<> ]+)",
         ],
     ],
     "LinkedIn": [
         '"{name}"+site:linkedin.com',
         [
-            "[\"' ](https?://[a-z\.]*linkedin.[a-z\.]+/[^\?\"'<> ]+)['\" ]",
-            "(https?%3a%2f%2f[a-z\.]*linkedin.[a-z\.]+%2f[^\?\"'<> ]+)",
+            r"[\"' ](https?://[a-z\.]*linkedin.[a-z\.]+/[^\?\"'<> ]+)['\" ]",
+            r"(https?%3a%2f%2f[a-z\.]*linkedin.[a-z\.]+%2f[^\?\"'<> ]+)",
         ],
     ],
 }
@@ -130,7 +130,7 @@ class sfp_socialprofiles(SpiderFootPlugin):
 
             if self.opts["method"].lower() == "yahoo":
                 self.sf.error(
-                    "Yahoo is no longer supported. Please try 'bing' or 'google'.", False,
+                    "Yahoo is no longer supported. Please try 'bing' or 'google'.", False
                 )
                 return None
 
@@ -207,7 +207,7 @@ class sfp_socialprofiles(SpiderFootPlugin):
                             found = False
                             for kw in self.keywords:
                                 if re.search(
-                                    "[^a-zA-Z\-\_]" + kw + "[^a-zA-Z\-\_]",
+                                    r"[^a-zA-Z\-\_]" + kw + r"[^a-zA-Z\-\_]",
                                     pres["content"],
                                     re.IGNORECASE,
                                 ):

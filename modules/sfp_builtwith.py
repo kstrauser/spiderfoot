@@ -110,7 +110,7 @@ class sfp_builtwith(SpiderFootPlugin):
 
         if "Meta" in data:
             # Verify any email addresses as we sometimes get junk from BuiltWith
-            pat = re.compile("([\%a-zA-Z\.0-9_\-\+]+@[a-zA-Z\.0-9\-]+\.[a-zA-Z\.0-9\-]+)")
+            pat = re.compile(r"([\%a-zA-Z\.0-9_\-\+]+@[a-zA-Z\.0-9\-]+\.[a-zA-Z\.0-9\-]+)")
             if data["Meta"].get("Names", []):
                 for nb in data["Meta"]["Names"]:
                     e = SpiderFootEvent(

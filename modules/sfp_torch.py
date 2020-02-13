@@ -75,7 +75,7 @@ class sfp_torch(SpiderFootPlugin):
         else:
             # Need the form ID to submit later for the search
             m = re.findall(
-                '\<form method="get" action="/(\S+)/search.cgi"\>',
+                r'\<form method="get" action="/(\S+)/search.cgi"\>',
                 formpage["content"],
                 re.IGNORECASE | re.DOTALL,
             )
@@ -124,7 +124,7 @@ class sfp_torch(SpiderFootPlugin):
                 self.notifyListeners(evt)
 
                 links = re.findall(
-                    '\<DT\>\d+.\s+<a href="(.*?)"\s+TARGET="_blank"\>',
+                    r'\<DT\>\d+.\s+<a href="(.*?)"\s+TARGET="_blank"\>',
                     data["content"],
                     re.IGNORECASE | re.DOTALL,
                 )

@@ -78,7 +78,7 @@ class sfp_emailformat(SpiderFootPlugin):
                 continue
 
             # Skip masked emails
-            if re.match("^[0-9a-f]{8}\.[0-9]{7}@", email):
+            if re.match(r"^[0-9a-f]{8}\.[0-9]{7}@", email):
                 self.sf.debug("Skipped address: " + email)
                 continue
 

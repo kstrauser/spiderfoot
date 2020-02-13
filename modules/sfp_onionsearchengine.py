@@ -117,7 +117,7 @@ class sfp_onionsearchengine(SpiderFootPlugin):
             self.notifyListeners(evt)
 
             links = re.findall(
-                "url\.php\?u=(.[^\"']+)[\"']", data["content"], re.IGNORECASE | re.DOTALL
+                r"url\.php\?u=(.[^\"']+)[\"']", data["content"], re.IGNORECASE | re.DOTALL
             )
 
             for link in links:

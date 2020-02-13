@@ -110,7 +110,7 @@ class sfp_dnszonexfer(SpiderFootPlugin):
 
                 # Try and pull out individual records
                 for row in ret:
-                    pat = re.compile("^(\S+)\.?\s+\d+\s+IN\s+[AC].*", re.IGNORECASE | re.DOTALL)
+                    pat = re.compile(r"^(\S+)\.?\s+\d+\s+IN\s+[AC].*", re.IGNORECASE | re.DOTALL)
                     grps = re.findall(pat, row)
                     if len(grps) > 0:
                         for strdata in grps:

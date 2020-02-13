@@ -17,14 +17,14 @@ from sflib import SpiderFoot, SpiderFootEvent, SpiderFootPlugin
 regexps = dict(
     {
         "jQuery": list(["jquery"]),  # unlikely false positive
-        "YUI": list(["\/yui\/", "yui\-", "yui\."]),
-        "Prototype": list(["\/prototype\/", "prototype\-", "prototype\.js"]),
-        "ZURB Foundation": list(["\/foundation\/", "foundation\-", "foundation\.js"]),
-        "Bootstrap": list(["\/bootstrap\/", "bootstrap\-", "bootstrap\.js"]),
-        "ExtJS": list(["['\"\=]ext\.js", "extjs", "\/ext\/*\.js"]),
-        "Mootools": list(["\/mootools\/", "mootools\-", "mootools\.js"]),
-        "Dojo": list(["\/dojo\/", "['\"\=]dojo\-", "['\"\=]dojo\.js"]),
-        "Wordpress": list(["\/wp-includes\/", "\/wp-content\/"]),
+        "YUI": list([r"\/yui\/", r"yui\-", r"yui\."]),
+        "Prototype": list([r"\/prototype\/", r"prototype\-", r"prototype\.js"]),
+        "ZURB Foundation": list([r"\/foundation\/", r"foundation\-", r"foundation\.js"]),
+        "Bootstrap": list([r"\/bootstrap\/", r"bootstrap\-", r"bootstrap\.js"]),
+        "ExtJS": list([r"['\"\=]ext\.js", "extjs", r"\/ext\/*\.js"]),
+        "Mootools": list([r"\/mootools\/", r"mootools\-", r"mootools\.js"]),
+        "Dojo": list([r"\/dojo\/", r"['\"\=]dojo\-", r"['\"\=]dojo\.js"]),
+        "Wordpress": list([r"\/wp-includes\/", r"\/wp-content\/"]),
     }
 )
 

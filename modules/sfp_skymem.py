@@ -120,7 +120,7 @@ class sfp_skymem(SpiderFootPlugin):
 
             # Check if we're on the last page of results
             max_page = 0
-            pages = re.findall(r"/domain/" + domain_id + "\?p=(\d+)", res["content"])
+            pages = re.findall(r"/domain/" + domain_id + r"\?p=(\d+)", res["content"])
             for p in pages:
                 if int(p) >= max_page:
                     max_page = int(p)

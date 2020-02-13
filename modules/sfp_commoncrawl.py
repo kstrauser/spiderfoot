@@ -81,7 +81,7 @@ class sfp_commoncrawl(SpiderFootPlugin):
             self.errorState = True
             return list()
 
-        indexes = re.findall(".*(CC-MAIN-\d+-\d+).*", res["content"])
+        indexes = re.findall(r".*(CC-MAIN-\d+-\d+).*", res["content"])
         highest = 0
         indexlist = dict()
         for m in indexes:

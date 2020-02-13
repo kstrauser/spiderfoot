@@ -67,7 +67,7 @@ class sfp_zoneh(SpiderFootPlugin):
 
     def lookupItem(self, target, content):
         grps = re.findall(
-            "<title><\!\[CDATA\[(.[^\]]*)\]\]></title>\s+<link><\!\[CDATA\[(.[^\]]*)\]\]></link>",
+            r"<title><\!\[CDATA\[(.[^\]]*)\]\]></title>\s+<link><\!\[CDATA\[(.[^\]]*)\]\]></link>",
             content,
         )
         for m in grps:

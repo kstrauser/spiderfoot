@@ -87,7 +87,7 @@ class sfp_portscan_tcp(SpiderFootPlugin):
     # Option descriptions
     optdescs = {
         "maxthreads": "Number of ports to try to open simultaneously (number of threads to spawn at once.)",
-        "ports": "The TCP ports to scan. Prefix with an '@' to iterate through a file containing ports to try (one per line), e.g. @C:\ports.txt or @/home/bob/ports.txt. Or supply a URL to load the list from there.",
+        "ports": "The TCP ports to scan. Prefix with an '@' to iterate through a file containing ports to try (one per line), e.g. @C:\\ports.txt or @/home/bob/ports.txt. Or supply a URL to load the list from there.",
         "timeout": "Seconds before giving up on a port.",
         "randomize": "Randomize the order of ports scanned.",
         "netblockscan": "Port scan all IPs within identified owned netblocks?",

@@ -26,10 +26,10 @@ regexps = dict(
             "include_path=",
         ],
         "Generic Error": ["Internal Server Error", "Incorrect syntax"],
-        "Oracle Error": ["ORA-\d+", "TNS:.?no listen"],
+        "Oracle Error": [r"ORA-\d+", "TNS:.?no listen"],
         "ASP Error": ["NET_SessionId"],
-        "MySQL Error": ["mysql_query\(", "mysql_connect\("],
-        "ODBC Error": ["\[ODBC SQL"],
+        "MySQL Error": [r"mysql_query\(", r"mysql_connect\("],
+        "ODBC Error": [r"\[ODBC SQL"],
     }
 )
 

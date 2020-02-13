@@ -173,7 +173,7 @@ class sfp_bambenek(SpiderFootPlugin):
                     # build a list of IP.
                     # Cycle through each IP and check if it's in the netblock.
                     if "regex" in malchecks[check]:
-                        rx = malchecks[check]["regex"].replace("{0}", "(\d+\.\d+\.\d+\.\d+)")
+                        rx = malchecks[check]["regex"].replace("{0}", r"(\d+\.\d+\.\d+\.\d+)")
                         pat = re.compile(rx, re.IGNORECASE)
                         self.sf.debug("New regex for " + check + ": " + rx)
                         for line in data["content"].split("\n"):
@@ -276,11 +276,7 @@ class sfp_bambenek(SpiderFootPlugin):
                     else:
                         evtType = "MALICIOUS_AFFILIATE_IPADDR"
 
-                if eventName in [
-                    "INTERNET_NAME",
-                    "CO_HOSTED_SITE",
-                    "AFFILIATE_INTERNET_NAME",
-                ]:
+                if eventName in ["INTERNET_NAME", "CO_HOSTED_SITE", "AFFILIATE_INTERNET_NAME"]:
                     typeId = "domain"
                     if eventName == "INTERNET_NAME":
                         evtType = "MALICIOUS_INTERNET_NAME"

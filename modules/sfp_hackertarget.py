@@ -259,7 +259,7 @@ class sfp_hackertarget(SpiderFootPlugin):
 
             # Try and pull out individual records
             for row in records:
-                pat = re.compile("^(\S+)\.?\s+\d+\s+IN\s+[AC].*", re.IGNORECASE | re.DOTALL)
+                pat = re.compile(r"^(\S+)\.?\s+\d+\s+IN\s+[AC].*", re.IGNORECASE | re.DOTALL)
                 grps = re.findall(pat, row)
 
                 if len(grps) == 0:

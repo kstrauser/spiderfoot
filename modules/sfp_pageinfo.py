@@ -22,10 +22,10 @@ regexps = dict(
     {
         "URL_JAVASCRIPT": list(["text/javascript", "<script "]),
         "URL_FORM": list(["<form ", "method=[PG]", "<input "]),
-        "URL_PASSWORD": list(["<input.*type=[\"']*password"]),
-        "URL_UPLOAD": list(["type=[\"']*file"]),
+        "URL_PASSWORD": list([r"<input.*type=[\"']*password"]),
+        "URL_UPLOAD": list([r"type=[\"']*file"]),
         "URL_JAVA_APPLET": list(["<applet "]),
-        "URL_FLASH": list(["\.swf[ '\"]"]),
+        "URL_FLASH": list([r"\.swf[ '\"]"]),
     }
 )
 

@@ -62,32 +62,32 @@ class sfp_company(SpiderFootPlugin):
         # Various ways to identify companies in text
         # Support up to three word company names with each starting with
         # a capital letter, allowing for hyphens brackets and numbers within.
-        pattern_prefix = "(?=[,;:'\">\(= ]|^)\s?([A-Z0-9\(\)][A-Za-z0-9\-&,\.][^ \"';:><]*)?\s?([A-Z0-9\(\)][A-Za-z0-9\-&,\.]?[^ \"';:><]*|[Aa]nd)?\s?([A-Z0-9\(\)][A-Za-z0-9\-&,\.]?[^ \"';:><]*)?\s+"
+        pattern_prefix = r"(?=[,;:'\">\(= ]|^)\s?([A-Z0-9\(\)][A-Za-z0-9\-&,\.][^ \"';:><]*)?\s?([A-Z0-9\(\)][A-Za-z0-9\-&,\.]?[^ \"';:><]*|[Aa]nd)?\s?([A-Z0-9\(\)][A-Za-z0-9\-&,\.]?[^ \"';:><]*)?\s+"
         pattern_match_re = [
-            "LLC",
-            "L\.L\.C\.?",
-            "AG",
-            "A\.G\.?",
-            "GmbH",
-            "Pty\.?\s+Ltd\.?",
-            "Ltd\.?",
-            "Pte\.?",
-            "Inc\.?",
-            "INC\.?",
-            "Incorporated",
-            "Foundation",
-            "Corp\.?",
-            "Corporation",
-            "SA",
-            "S\.A\.?",
-            "SIA",
-            "BV",
-            "B\.V\.?",
-            "NV",
-            "N\.V\.?" "PLC",
-            "Limited",
-            "Pvt\.?\s+Ltd\.?",
-            "SARL",
+            r"LLC",
+            r"L\.L\.C\.?",
+            r"AG",
+            r"A\.G\.?",
+            r"GmbH",
+            r"Pty\.?\s+Ltd\.?",
+            r"Ltd\.?",
+            r"Pte\.?",
+            r"Inc\.?",
+            r"INC\.?",
+            r"Incorporated",
+            r"Foundation",
+            r"Corp\.?",
+            r"Corporation",
+            r"SA",
+            r"S\.A\.?",
+            r"SIA",
+            r"BV",
+            r"B\.V\.?",
+            r"NV",
+            r"N\.V\.?" "PLC",
+            r"Limited",
+            r"Pvt\.?\s+Ltd\.?",
+            r"SARL",
         ]
         pattern_match = [
             "LLC",
@@ -114,10 +114,10 @@ class sfp_company(SpiderFootPlugin):
             "SARL",
         ]
 
-        pattern_suffix = "(?=[ \.,:<\)'\"]|[$\n\r])"
+        pattern_suffix = r"(?=[ \.,:<\)'\"]|[$\n\r])"
 
         # Filter out anything from the company name which matches the below
-        filterpatterns = ["Copyright", "\d{4}"]  # To catch years
+        filterpatterns = [r"Copyright", r"\d{4}"]  # To catch years
 
         # Don't re-parse company names
         if eventName in ["COMPANY_NAME", "AFFILIATE_COMPANY_NAME"]:
@@ -200,7 +200,7 @@ class sfp_company(SpiderFootPlugin):
                         if not flt:
                             fullcompany += m + " "
 
-                    fullcompany = re.sub("\s+", " ", fullcompany.strip())
+                    fullcompany = re.sub(r"\s+", " ", fullcompany.strip())
 
                     self.sf.info("Found company name: " + fullcompany)
                     if fullcompany in myres:
